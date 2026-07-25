@@ -10,7 +10,7 @@ Through repeated real-world use, I have observed failures that are not well repr
 
 ### Research question
 
-How can real-world Traditional Chinese agent workflow failures be converted into reproducible evaluations of context retention, instruction persistence, tool selection, completion integrity, and operator correction burden?
+How can real-world Traditional Chinese agent workflow failures be converted into reproducible evaluations of context retention, instruction persistence, tool selection, completion integrity, recovery behavior, and operator correction burden?
 
 ### Scope
 
@@ -29,13 +29,15 @@ I have already built and maintained:
 
 1. Define a Traditional Chinese agent failure taxonomy.
 2. Publish at least 20 de-identified reproducible cases.
-3. Build a small benchmark comparing baseline prompts with structured-context conditions.
-4. Measure task completion, rule violations, human corrections, validation success, and failure type.
-5. Document limitations caused by operator involvement.
+3. Build a small benchmark comparing minimal, natural-language, and structured-context conditions.
+4. Measure task completion, rule violations, human corrections, validation success, recovery behavior, and failure type.
+5. Document limitations caused by operator involvement and rubric-based judgment.
 6. Publish the dataset, evaluation criteria, pilot results, and practical recommendations.
 
 ### Requested support
 
-I am requesting OpenAI API credits to build, run, and document reproducible evaluations of Traditional Chinese long-horizon agent workflows over a 12-month period.
+I am requesting OpenAI API credits to build, run, and document reproducible evaluations of Traditional Chinese long-horizon agent workflows.
 
-I am also open to contributing as an independent evaluator, design partner, contractor, or future APAC team member in areas related to Traditional Chinese agent workflows, power-user experience, and long-horizon agent reliability.
+### Research integrity
+
+This project will not publish private conversations, credentials, personal identifiers, secret values, or raw system logs. Cases will be manually anonymized and rewritten into minimal reproducible examples. Observed evidence, interpretation, and inference will be reported separately.
