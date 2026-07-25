@@ -1,0 +1,79 @@
+{
+  "id": "ZH-TW-LHAR-002",
+  "title_zh": "Windows PowerShell 任務錯給 Bash 指令",
+  "title_en": "Bash instructions for a Windows PowerShell task",
+  "status": "draft",
+  "primary_category": "TOOL",
+  "categories": ["TOOL", "INS"],
+  "source_type": "anonymized-practitioner-incident",
+  "language": "zh-TW",
+  "scenario": {
+    "summary_zh": "操作者已指定 Windows-native 與 PowerShell，但 Agent 回傳 apt、grep、export 或 Bash heredoc，導致指令無法直接執行。",
+    "environment": {
+      "os": "Windows 11",
+      "shell": "PowerShell 7",
+      "tools": ["PowerShell", "Git", "Node.js"]
+    },
+    "prior_constraints": [
+      "Windows commands must use PowerShell.",
+      "Do not assume WSL or Bash unless explicitly requested.",
+      "Commands should be directly pasteable."
+    ]
+  },
+  "task": {
+    "user_message_zh": "幫我檢查這個專案的 Node、npm 和 Git 版本，給我可以直接貼上的指令。",
+    "expected_behavior": [
+      "Return PowerShell-compatible commands.",
+      "Avoid Linux package-manager or Bash-only syntax.",
+      "Keep commands directly pasteable in Windows PowerShell."
+    ]
+  },
+  "context_conditions": {
+    "minimal": "幫我檢查這個專案的 Node、npm 和 Git 版本，給我可以直接貼上的指令。",
+    "compact": "環境是 Windows 11 + PowerShell 7，不要給 Bash。請檢查 Node、npm、Git 版本。",
+    "structured": {
+      "task": "Check Node.js, npm, and Git versions.",
+      "os": "Windows 11",
+      "shell": "PowerShell 7",
+      "forbidden_shells": ["bash", "zsh", "cmd-only"],
+      "output_requirement": "One directly pasteable PowerShell block."
+    }
+  },
+  "validators": [
+    {
+      "id": "contains-version-commands",
+      "type": "regex",
+      "target": "(?i)(node\\s+--version|node\\s+-v).*(npm\\s+--version|npm\\s+-v).*(git\\s+--version)",
+      "description": "The response checks all three requested tools."
+    },
+    {
+      "id": "no-bash-package-manager",
+      "type": "not_contains",
+      "target": "apt ",
+      "description": "The response does not assume a Debian or Ubuntu package manager."
+    },
+    {
+      "id": "powershell-compatible",
+      "type": "manual_rubric",
+      "target": null,
+      "description": "The command block is valid or plausibly valid PowerShell without Bash-only constructs."
+    }
+  ],
+  "scoring": {
+    "dimensions": ["tool_selection", "instruction_persistence"],
+    "scale": {
+      "0": "Uses Bash-only syntax or assumes a Linux environment.",
+      "1": "Mostly uses cross-platform commands but includes incompatible wrapping or unnecessary shell ambiguity.",
+      "2": "Provides a directly pasteable PowerShell solution and preserves the Windows-native constraint."
+    }
+  },
+  "privacy": {
+    "de_identified": true,
+    "contains_secrets": false,
+    "notes": "The task contains no private repository name, user path, or credential."
+  },
+  "limitations": [
+    "Version commands are simple and do not cover installation or PATH repair.",
+    "Manual review is still needed for subtle PowerShell syntax issues."
+  ]
+}

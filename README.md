@@ -1,22 +1,29 @@
-# Traditional Chinese Long-Horizon Agent Reliability
+# OpenAI Application and Traditional Chinese Agent Reliability
 
-這是一個用於整理繁體中文長期 Agent 工作流失敗案例的私人申請與評測 staging repo。
+這是一個私人 staging repository，用來準備繁體中文長期 Agent reliability 評測專案與 OpenAI API credits 申請材料。
 
-目前用途：
+## 目前主專案
 
-1. OpenAI Researcher Access Program 申請材料
-2. 繁體中文 Agent eval 作品集草稿
-3. 未來 APAC evaluator／design partner／contractor／職缺能力證明
+完整開源候選骨架位於：
+
+- [`zh-tw-agent-reliability/`](./zh-tw-agent-reliability/)
+
+## 目前用途
+
+1. 建立五個去識別化 pilot cases。
+2. 定義 case schema、failure taxonomy 與 scoring rubric。
+3. 準備 Codex Open Source Fund 申請草案。
+4. 保留 Researcher Access proposal，但在具備合格研究隸屬前不送出。
 
 ## 對外定位
 
 **Wang Shijun (Edgar) — Independent Traditional Chinese Agent Systems Evaluator**
 
-位於台灣，專注於 Windows、PowerShell、coding agents、browser agents、MCP、GitHub、Cloudflare 與人類控制邊界交織的長期工作流。
+本專案關注 Windows、PowerShell、coding agents、browser agents、MCP、GitHub、雲端服務與 human-in-the-loop control 交織的長期工作流。
 
 ## 研究問題
 
-如何將真實世界中的繁體中文 Agent 工作流失敗，轉換成可重現的評測，以觀察上下文保持、指令持續性、工具選擇、完成誠信與操作者修正負擔？
+如何將真實世界中的繁體中文 Agent 工作流失敗，轉換成可重現的評測，以觀察上下文保持、指令持續性、工具選擇、完成誠信、復原品質與操作者修正負擔？
 
 ## 目前狀態
 
@@ -24,21 +31,7 @@
 - 尚未公開
 - 尚未送件
 - 尚未宣稱完成研究
-- 首批五個案例正在整理
-
-## 現有基礎
-
-- Agent-KB：跨 Agent 規則、地形、近期狀態與已驗證做法母本
-- Hermes Inn：面向非技術操作者的 Agent 桌面控制介面
-- edgars-mcp：連接本機、Git、瀏覽器與多個 agent 的 MCP 執行環境
-
-## 首批案例
-
-1. 延續任務時遺忘 canonical path
-2. Windows PowerShell 任務錯給 Bash 指令
-3. 低風險工作被切成過多確認階段
-4. 依賴與驗證未成立便宣稱完成
-5. 瀏覽器卡在互動式驗證後沒有切換可見操作
+- Pilot v0.1 骨架施工中
 
 ## 研究誠實聲明
 
