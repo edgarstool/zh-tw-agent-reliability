@@ -1,38 +1,109 @@
-# OpenAI Application and Traditional Chinese Agent Reliability
+# zh-tw-agent-reliability
 
-這是一個私人 staging repository，用來準備繁體中文長期 Agent reliability 評測專案與 OpenAI API credits 申請材料。
+**Traditional Chinese Long-Horizon Agent Reliability**
 
-## 目前主專案
+An evaluation toolkit for studying observable failures in long-horizon AI agent workflows conducted in Traditional Chinese.
 
-完整開源候選骨架位於：
+> **Current status:** formal private pilot repository. The schema and five initial cases are drafted; automated execution, measured results, license selection, and public release are still pending.
 
-- [`zh-tw-agent-reliability/`](./zh-tw-agent-reliability/)
+## Research question
 
-## 目前用途
+How can real-world Traditional Chinese agent workflow failures be converted into reproducible evaluations of context retention, instruction persistence, tool selection, completion integrity, recovery behavior, and operator correction burden?
 
-1. 建立五個去識別化 pilot cases。
-2. 定義 case schema、failure taxonomy 與 scoring rubric。
-3. 準備 Codex Open Source Fund 申請草案。
-4. 保留 Researcher Access proposal，但在具備合格研究隸屬前不送出。
+## What this project evaluates
 
-## 對外定位
+- context retention across continued tasks;
+- persistence of previously established instructions;
+- tool, shell, and environment selection;
+- completion integrity and unsupported success claims;
+- recovery after tools or browser automation fail;
+- preservation of human control without excessive approval burden;
+- robustness to noisy Traditional Chinese input.
 
-**Wang Shijun (Edgar) — Independent Traditional Chinese Agent Systems Evaluator**
+The goal is not to produce one universal leaderboard score. The goal is to make specific failure patterns inspectable, rerunnable, and easier to discuss.
 
-本專案關注 Windows、PowerShell、coding agents、browser agents、MCP、GitHub、雲端服務與 human-in-the-loop control 交織的長期工作流。
+## Pilot v0.1
 
-## 研究問題
+The initial pilot contains five de-identified cases:
 
-如何將真實世界中的繁體中文 Agent 工作流失敗，轉換成可重現的評測，以觀察上下文保持、指令持續性、工具選擇、完成誠信、復原品質與操作者修正負擔？
+1. **Canonical path loss** across a continued task.
+2. **Wrong shell selection**, returning Bash instructions for Windows PowerShell.
+3. **Excessive approval fragmentation** for a low-risk task.
+4. **Unsupported completion claims** when required validation tools did not run.
+5. **Missing visible human-assisted recovery** after browser verification blocks automation.
 
-## 目前狀態
+Each case includes the task, prior constraints, three context conditions, expected behavior, validators, a 0–2 scoring rubric, privacy notes, and known limitations.
 
-- Private staging
-- 尚未公開
-- 尚未送件
-- 尚未宣稱完成研究
-- Pilot v0.1 骨架施工中
+## Repository layout
 
-## 研究誠實聲明
+```text
+.
+├─ README.md
+├─ CONTRIBUTING.md
+├─ schema/
+│  └─ case.schema.json
+├─ taxonomy/
+│  └─ failure-taxonomy.md
+├─ data/
+│  └─ pilot/
+│     ├─ ZH-TW-LHAR-001.json
+│     ├─ ZH-TW-LHAR-002.json
+│     ├─ ZH-TW-LHAR-003.json
+│     ├─ ZH-TW-LHAR-004.json
+│     └─ ZH-TW-LHAR-005.json
+└─ docs/
+   ├─ pilot-plan.md
+   ├─ open-source-fund-application.md
+   └─ research-proposal-en.md
+```
 
-本案不把操作者主觀觀察包裝成普遍因果證明。核心貢獻是把真實、高價值 failure modes 轉成結構化、去識別化、可重現與可評分的 eval 材料。
+## Evaluation design
+
+Each case can be executed under three context conditions:
+
+1. **Minimal:** only the immediate task.
+2. **Compact:** a short natural-language reminder of important constraints.
+3. **Structured:** explicit environment, tool, constraint, and completion requirements.
+
+The pilot plan proposes 5 cases × 3 context conditions × 3 repetitions × 2 model configurations, for 90 primary runs. Results must preserve the model output, validator evidence, rubric evidence, token usage, model configuration, and estimated API cost.
+
+## Evidence standard
+
+Reports must distinguish:
+
+- **Observation:** what the model or tool actually produced.
+- **Interpretation:** why the behavior may represent a failure.
+- **Inference:** a broader hypothesis that still requires testing.
+
+An inference must not be presented as an observed fact. Ambiguous outcomes should remain ambiguous rather than being silently converted into passes or failures.
+
+## Quick navigation
+
+- [Pilot execution plan](docs/pilot-plan.md)
+- [Failure taxonomy](taxonomy/failure-taxonomy.md)
+- [Case JSON Schema](schema/case.schema.json)
+- [Contribution and privacy rules](CONTRIBUTING.md)
+- [Codex Open Source Fund application draft](docs/open-source-fund-application.md)
+- [Research proposal draft](docs/research-proposal-en.md)
+
+## Privacy
+
+The repository must not publish raw private conversations, credentials, personal identifiers, secret values, private service URLs, real IP addresses, or identifiable system logs. Practitioner-observed incidents are rewritten as minimal synthetic reproductions before publication.
+
+## Non-goals
+
+The pilot does not claim:
+
+- that five cases represent all Traditional Chinese users;
+- that one aggregate score captures overall model quality;
+- that practitioner observations establish universal causal conclusions;
+- that the current draft is already a validated benchmark.
+
+## Maintainer
+
+**Wang Shijun (Edgar)**  
+Independent builder and Traditional Chinese agent-systems evaluator based in Taiwan.
+
+## License
+
+License selection is pending before public release. Until a license is added, no permission to reuse or redistribute the repository contents is granted by default.

@@ -12,7 +12,7 @@
 
 **Project name:** zh-tw-agent-reliability
 
-**Repository:** [replace with the final public repository URL]
+**Repository:** https://github.com/edgarstool/zh-tw-agent-reliability
 
 ## Brief description
 
@@ -22,7 +22,7 @@ The project converts anonymized practitioner-observed failures into reproducible
 
 Each case includes the task, prior constraints, three context conditions, expected behavior, deterministic validators where possible, transparent rubric dimensions, privacy notes, and known limitations.
 
-The first public milestone will contain five pilot cases and will expand to at least twenty cases after the schema and execution process have been tested.
+The formal private pilot currently contains five drafted cases. They will be prepared for public release after schema validation, harness execution, privacy review, and license selection. The dataset is intended to expand to at least twenty cases after the pilot process has been tested.
 
 ## Why this project is useful
 
@@ -54,10 +54,10 @@ The full milestone will expand to at least twenty cases. Token usage and estimat
 
 ## Planned public outputs
 
-- case JSON schema;
+- case JSON Schema;
 - failure taxonomy;
 - at least twenty de-identified cases;
-- execution harness and run manifest format;
+- execution harness and run-manifest format;
 - deterministic validators;
 - transparent scoring rubrics;
 - pilot and regression reports;
@@ -79,17 +79,19 @@ Cases are rewritten as minimal synthetic reproductions of observed failure patte
 
 ## Current status
 
+- formal repository name and root structure established;
+- repository remains private pending publication review;
 - schema drafted;
 - taxonomy drafted;
 - five pilot cases drafted;
 - pilot execution pending;
-- public repository split and license selection pending;
+- license selection pending;
 - application not yet submitted.
 
 ## Fields to complete before submission
 
-- final public repository URL;
 - selected open-source license;
+- public visibility and release review;
 - pilot result link;
 - measured token and cost estimate;
 - contributor list, if any;
