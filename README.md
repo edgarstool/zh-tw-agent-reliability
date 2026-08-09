@@ -4,7 +4,7 @@
 
 An evaluation toolkit for studying observable failures in long-horizon AI agent workflows conducted in Traditional Chinese.
 
-> **Current status:** formal private pilot repository. The five initial cases now have schema validation, a deterministic local runner, a run-manifest format, and a no-API structural smoke path. Measured model results, license selection, privacy/publication review, and public release remain pending.
+> **Current status:** publication-ready private pilot repository. The five initial cases have schema validation, a deterministic local runner, a run-manifest format, and a no-API structural smoke path. The public-release privacy review and Apache-2.0 licensing are complete. No real model measurements, token/cost measurements, or 90-run results have been produced.
 
 ## Local pilot commands
 
@@ -55,6 +55,7 @@ Each case includes the task, prior constraints, three context conditions, expect
 .
 ├─ README.md
 ├─ CONTRIBUTING.md
+├─ LICENSE
 ├─ schema/
 │  └─ case.schema.json
 ├─ taxonomy/
@@ -68,6 +69,7 @@ Each case includes the task, prior constraints, three context conditions, expect
 │     └─ ZH-TW-LHAR-005.json
 └─ docs/
    ├─ pilot-plan.md
+   ├─ publication-readiness.md
    ├─ open-source-fund-application.md
    └─ research-proposal-en.md
 ```
@@ -98,6 +100,7 @@ An inference must not be presented as an observed fact. Ambiguous outcomes shoul
 - [Failure taxonomy](taxonomy/failure-taxonomy.md)
 - [Case JSON Schema](schema/case.schema.json)
 - [Contribution and privacy rules](CONTRIBUTING.md)
+- [Publication-readiness report](docs/publication-readiness.md)
 - [Codex Open Source Fund application draft](docs/open-source-fund-application.md)
 - [Research proposal draft](docs/research-proposal-en.md)
 
@@ -121,4 +124,4 @@ Independent builder and Traditional Chinese agent-systems evaluator based in Tai
 
 ## License
 
-License selection is pending before public release. Until a license is added, no permission to reuse or redistribute the repository contents is granted by default.
+This repository is licensed under [Apache-2.0](LICENSE). The license applies to the executable code, JSON Schemas, de-identified pilot cases, and repository documentation. It does not grant rights to private source material that is intentionally excluded from this repository.

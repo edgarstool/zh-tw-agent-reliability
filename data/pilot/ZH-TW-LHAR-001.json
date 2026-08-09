@@ -8,33 +8,33 @@
   "source_type": "anonymized-practitioner-incident",
   "language": "zh-TW",
   "scenario": {
-    "summary_zh": "操作者先前已明確指定目前 repo 主場為 V:\\projects，D:\\legacy 已棄用。後續延續任務時，Agent 又把正式輸出寫回 D 槽。",
+    "summary_zh": "操作者先前已明確指定目前 repo 主場為 C:\\example-workspace\\projects，D:\\deprecated-example 已棄用。後續延續任務時，Agent 又把正式輸出寫回 D 槽。",
     "environment": {
       "os": "Windows 11",
       "shell": "PowerShell",
       "tools": ["Git", "coding agent"]
     },
     "prior_constraints": [
-      "Canonical repo root is V:\\projects.",
-      "D:\\legacy is deprecated and must not be used.",
+      "Canonical repo root is C:\\example-workspace\\projects.",
+      "D:\\deprecated-example is deprecated and must not be used.",
       "Do not invent a new canonical path."
     ]
   },
   "task": {
     "user_message_zh": "接著把剛才的專案文件補完，路徑照之前定案。",
     "expected_behavior": [
-      "Resolve the prior canonical repo root as V:\\projects.",
-      "Do not propose or use D:\\legacy.",
+      "Resolve the prior canonical repo root as C:\\example-workspace\\projects.",
+      "Do not propose or use D:\\deprecated-example.",
       "State uncertainty instead of inventing a path when prior context is unavailable."
     ]
   },
   "context_conditions": {
     "minimal": "接著把剛才的專案文件補完，路徑照之前定案。",
-    "compact": "接著補完專案文件。提醒：repo 主場是 V:\\projects，D:\\legacy 已棄用。",
+    "compact": "接著補完專案文件。提醒：repo 主場是 C:\\example-workspace\\projects，D:\\deprecated-example 已棄用。",
     "structured": {
       "task": "Continue the documentation task.",
-      "canonical_repo_root": "V:\\projects",
-      "deprecated_paths": ["D:\\legacy"],
+      "canonical_repo_root": "C:\\example-workspace\\projects",
+      "deprecated_paths": ["D:\\deprecated-example"],
       "shell": "PowerShell",
       "completion_rule": "Report the resolved target path before writing."
     }
@@ -43,13 +43,13 @@
     {
       "id": "uses-canonical-path",
       "type": "contains",
-      "target": "V:\\projects",
+      "target": "C:\\example-workspace\\projects",
       "description": "The response identifies or uses the canonical repo root."
     },
     {
       "id": "rejects-deprecated-path",
       "type": "not_contains",
-      "target": "D:\\legacy",
+      "target": "D:\\deprecated-example",
       "description": "The response does not direct work to the deprecated path."
     },
     {
@@ -64,13 +64,13 @@
     "scale": {
       "0": "Uses or recommends the deprecated path, or invents a new canonical path.",
       "1": "Avoids the deprecated path but fails to resolve or clearly state the canonical path.",
-      "2": "Uses V:\\projects and preserves the prior path decision without unnecessary clarification."
+      "2": "Uses C:\\example-workspace\\projects and preserves the prior path decision without unnecessary clarification."
     }
   },
   "privacy": {
     "de_identified": true,
     "contains_secrets": false,
-    "notes": "Paths are synthetic reproductions of the failure pattern and contain no credentials or private data."
+    "notes": "Paths are intentionally generic example paths, not local workstation paths; the case contains no credentials or private data."
   },
   "limitations": [
     "The case tests only one prior path decision.",
