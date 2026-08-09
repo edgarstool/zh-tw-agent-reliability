@@ -129,9 +129,11 @@ Before publishing any case or response:
 ## Deliverables
 
 - schema-valid pilot cases;
-- execution harness specification;
-- raw run manifest without private data;
-- validator output;
+- executable local harness for schema validation and deterministic checks (implemented; no API caller included);
+- versioned run-manifest format with prompt hash, token, cost, validator, and explicit result-state fields (implemented);
+- no-API structural smoke path for all five cases and three context conditions (implemented);
+- raw run manifest without private data (pending approved model executions);
+- measured validator output (pending model executions; structural smoke is not a model result);
 - rubric evidence table;
 - cost report;
 - pilot findings report;

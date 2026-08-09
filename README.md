@@ -4,7 +4,22 @@
 
 An evaluation toolkit for studying observable failures in long-horizon AI agent workflows conducted in Traditional Chinese.
 
-> **Current status:** formal private pilot repository. The schema and five initial cases are drafted; automated execution, measured results, license selection, and public release are still pending.
+> **Current status:** formal private pilot repository. The five initial cases now have schema validation, a deterministic local runner, a run-manifest format, and a no-API structural smoke path. Measured model results, license selection, privacy/publication review, and public release remain pending.
+
+## Local pilot commands
+
+The executable foundation uses Python and one runtime dependency, `jsonschema`. It does **not** include API credentials or make model calls.
+
+```powershell
+python -m pip install -e .
+python -m zh_tw_agent_reliability validate-cases
+python -m zh_tw_agent_reliability smoke --output runs/structural-smoke.json
+python -m unittest discover -s tests -v
+```
+
+`smoke` exercises all five cases under all three context conditions (15 structural runs). It deliberately provides no synthetic success response: failed deterministic checks remain `failed`, and rubric checks remain `pending_manual_review`.
+
+For an approved externally obtained response, use `run` with a response file. The manifest records the exact context-prompt format and hash, response provenance, validator evidence, token/cost fields (initially `null`), and an explicit final state. If deterministic validation fails or errors, `run` exits nonzero. The harness itself never calls an API; an externally sourced API response is recorded as such rather than misreported as a no-API execution. See [the pilot report skeleton](docs/pilot-report.md).
 
 ## Research question
 

@@ -22,7 +22,7 @@ The project converts anonymized practitioner-observed failures into reproducible
 
 Each case includes the task, prior constraints, three context conditions, expected behavior, deterministic validators where possible, transparent rubric dimensions, privacy notes, and known limitations.
 
-The formal private pilot currently contains five drafted cases. They will be prepared for public release after schema validation, harness execution, privacy review, and license selection. The dataset is intended to expand to at least twenty cases after the pilot process has been tested.
+The formal private pilot currently contains five drafted cases. The repository now includes local schema validation, a deterministic validator runner, prompt hashing, a versioned run-manifest format, and a no-API structural smoke path. It has not yet run model experiments or generated measured costs. The cases will be prepared for public release after privacy review and license selection. The dataset is intended to expand to at least twenty cases after the pilot process has been tested.
 
 ## Why this project is useful
 
@@ -84,7 +84,8 @@ Cases are rewritten as minimal synthetic reproductions of observed failure patte
 - schema drafted;
 - taxonomy drafted;
 - five pilot cases drafted;
-- pilot execution pending;
+- local executable pilot foundation implemented; no paid API execution performed;
+- measured pilot execution pending;
 - license selection pending;
 - application not yet submitted.
 
