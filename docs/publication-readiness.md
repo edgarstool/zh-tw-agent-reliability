@@ -1,6 +1,6 @@
 # Publication-readiness report — v0.1
 
-**Review date:** 2026-08-09  
+**Review date:** 2026-08-09
 **Scope:** README, CONTRIBUTING, schemas, five pilot cases, documentation, tests, manifests/examples, generated files, and tracked repository history reachable from `master`.
 
 ## DONE
