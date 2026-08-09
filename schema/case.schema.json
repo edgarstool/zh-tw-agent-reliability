@@ -110,7 +110,8 @@
             "type": "string",
             "enum": ["contains", "not_contains", "regex", "manual_rubric", "json_schema"]
           },
-          "target": { "type": ["string", "null"] },
+          "target": { "type": ["string", "object", "null"] },
+          "schema": { "type": "object" },
           "description": { "type": "string" }
         },
         "additionalProperties": false

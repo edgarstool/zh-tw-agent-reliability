@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zh-tw-agent-reliability"
+version = "0.1.0"
+description = "Executable pilot harness for Traditional Chinese long-horizon agent reliability cases."
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4.18,<5"]
+
+[project.scripts]
+zh-tw-agent-reliability = "zh_tw_agent_reliability.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
