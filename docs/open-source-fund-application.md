@@ -40,9 +40,9 @@ Primary maintainer
 
 API credits for my project
 
-### Why does this repository qualify? — 478 characters
+### Why does this repository qualify? — 486 characters
 
-zh-tw-agent-reliability is a small, actively maintained open-source toolkit for reproducible evaluation of long-horizon AI-agent reliability in Traditional Chinese. It targets underrepresented multi-tool workflows—Windows/PowerShell, code repositories, browser verification, and human approval boundaries—using de-identified cases, transparent validators, and privacy-first contribution rules. The public v0.1 is a foundation, not a claim of broad adoption or benchmark results.
+zh-tw-agent-reliability is a small, actively maintained open-source toolkit for reproducible evaluation of long-horizon AI-agent reliability in Traditional Chinese. It targets underrepresented multi-tool workflows—Windows/PowerShell, code repositories, browser verification, and human approval boundaries—using de-identified cases, transparent validators, and privacy-first contribution rules. The planned public v0.1 is a foundation, not a claim of broad adoption or benchmark results.
 
 ### How will you use API credits for your project? — 424 characters
 

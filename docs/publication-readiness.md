@@ -1,13 +1,13 @@
 # Publication-readiness report — v0.1
 
 **Review date:** 2026-08-09
-**Scope:** README, CONTRIBUTING, schemas, five pilot cases, documentation, tests, manifests/examples, generated files, and tracked repository history reachable from `master`.
+**Scope:** README, CONTRIBUTING, schemas, five pilot cases, documentation, tests, manifests/examples, generated files, and tracked repository history reachable from the default branch.
 
 ## DONE
 
 - [x] The tracked repository was reviewed for credential-shaped values, secrets, private hostnames, IPv4 addresses, private conversation exports, raw system logs, private repository references, and local-only paths.
 - [x] No secret values, API keys, credentials, recovery codes, private hostnames, IP addresses, raw conversations, or identifiable logs were found in the reviewed files.
-- [x] The one path-pattern case that used a real local workspace path was rewritten to use generic example paths (`C:\\example-workspace\\projects` and `D:\\deprecated-example`).
+- [x] The one path-pattern case that used a real local workspace path was rewritten to use generic example paths (`C:\example-workspace\projects` and `D:\deprecated-example`).
 - [x] The five pilot cases are de-identified, validate against `schema/case.schema.json`, and state `contains_secrets: false`.
 - [x] No generated run manifests, raw responses, build artifacts, virtual environments, or Python bytecode are tracked. `.gitignore` excludes those classes of files.
 - [x] Intentional maintainer identity is limited to Wang Shijun (Edgar), Taiwan, and the public GitHub username/repository URL in the README and application draft.
