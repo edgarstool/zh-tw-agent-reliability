@@ -4,7 +4,7 @@
 
 An evaluation toolkit for studying observable failures in long-horizon AI agent workflows conducted in Traditional Chinese.
 
-> **Current status:** publication-ready private pilot repository. The five initial cases have schema validation, a deterministic local runner, a run-manifest format, and a no-API structural smoke path. The public-release privacy review and Apache-2.0 licensing are complete. No real model measurements, token/cost measurements, or 90-run results have been produced.
+> **Current status:** public pilot repository. The five initial cases have schema validation, a deterministic local runner, a run-manifest format, and a no-API structural smoke path. The public-release privacy review and Apache-2.0 licensing are complete. No real model measurements, token/cost measurements, or 90-run results have been produced.
 
 ## Local pilot commands
 
@@ -71,6 +71,7 @@ Each case includes the task, prior constraints, three context conditions, expect
    ├─ pilot-plan.md
    ├─ publication-readiness.md
    ├─ open-source-fund-application.md
+   ├─ anthropic-researcher-access-application.md
    └─ research-proposal-en.md
 ```
 
@@ -102,6 +103,7 @@ An inference must not be presented as an observed fact. Ambiguous outcomes shoul
 - [Contribution and privacy rules](CONTRIBUTING.md)
 - [Publication-readiness report](docs/publication-readiness.md)
 - [Codex Open Source Fund application draft](docs/open-source-fund-application.md)
+- [Anthropic External Researcher Access application draft](docs/anthropic-researcher-access-application.md)
 - [Research proposal draft](docs/research-proposal-en.md)
 
 ## Privacy
