@@ -39,6 +39,12 @@ class RunnerTests(unittest.TestCase):
         }
         self.assertEqual("passed", run_case(case, "minimal", "ok")["final_state"])
 
+    def test_windows_path_validators_normalize_case_slashes_and_trailing_separator(self):
+        canonical = {"id": "path", "type": "contains", "target": "C:\\example-workspace\\projects", "description": "canonical"}
+        deprecated = {"id": "legacy", "type": "not_contains", "target": "D:\\deprecated-example", "description": "deprecated"}
+        self.assertEqual("passed", evaluate_validator(canonical, "Use c:/example-workspace/projects/").state)
+        self.assertEqual("failed", evaluate_validator(deprecated, "Do not use D:/DEPRECATED-EXAMPLE/").state)
+
     def test_manifest_matches_schema(self):
         case = json.loads((ROOT / "data/pilot/ZH-TW-LHAR-001.json").read_text(encoding="utf-8"))
         manifest = new_manifest(execution_mode="structural_smoke", runs=[run_case(case, "minimal", "")])

@@ -67,6 +67,23 @@ def _json_schema_target(validator: dict[str, Any]) -> dict[str, Any]:
     raise ValueError("json_schema validator has no usable schema")
 
 
+def _is_windows_absolute_path(value: object) -> bool:
+    return isinstance(value, str) and re.match(r"^[A-Za-z]:[\\/]", value) is not None
+
+
+def _normalized_windows_path_text(value: str) -> str:
+    """Normalize Windows-path comparisons without changing ordinary text validators."""
+    return value.replace("/", "\\").casefold().rstrip("\\")
+
+
+def _contains_target(response_text: str, target: object) -> bool:
+    if not isinstance(target, str):
+        return False
+    if _is_windows_absolute_path(target):
+        return _normalized_windows_path_text(target) in _normalized_windows_path_text(response_text)
+    return target in response_text
+
+
 def evaluate_validator(validator: dict[str, Any], response_text: str) -> ValidatorResult:
     """Evaluate one validator without turning errors or manual checks into passes."""
     validator_id = validator["id"]
@@ -77,9 +94,9 @@ def evaluate_validator(validator: dict[str, Any], response_text: str) -> Validat
         if validator_type == "manual_rubric":
             return ValidatorResult(validator_id, validator_type, "manual_required", description)
         if validator_type == "contains":
-            passed = isinstance(target, str) and target in response_text
+            passed = _contains_target(response_text, target)
         elif validator_type == "not_contains":
-            passed = isinstance(target, str) and target not in response_text
+            passed = not _contains_target(response_text, target)
         elif validator_type == "regex":
             passed = isinstance(target, str) and re.search(target, response_text, re.MULTILINE) is not None
         elif validator_type == "json_schema":

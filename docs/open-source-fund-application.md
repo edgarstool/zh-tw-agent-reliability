@@ -1,4 +1,4 @@
-# Codex Open Source Fund Application Draft
+# Codex for Open Source application — ready-to-paste draft
 
 ## Applicant
 
@@ -22,7 +22,7 @@ The project converts anonymized practitioner-observed failures into reproducible
 
 Each case includes the task, prior constraints, three context conditions, expected behavior, deterministic validators where possible, transparent rubric dimensions, privacy notes, and known limitations.
 
-The formal private pilot currently contains five drafted cases. The repository now includes local schema validation, a deterministic validator runner, prompt hashing, a versioned run-manifest format, and a no-API structural smoke path. It has not yet run model experiments or generated measured costs. The cases will be prepared for public release after privacy review and license selection. The dataset is intended to expand to at least twenty cases after the pilot process has been tested.
+The v0.1 pilot contains five de-identified draft cases. The repository includes local schema validation, a deterministic validator runner, prompt hashing, a versioned run-manifest format, and a no-API structural smoke path. It has not run model experiments or generated measured costs. Its public-release privacy review is complete and it is licensed under Apache-2.0.
 
 ## Why this project is useful
 
@@ -30,27 +30,27 @@ Public agent evaluations often emphasize isolated English-language tasks. They a
 
 This project focuses on inspectable failure patterns rather than a single leaderboard score. Maintainers should be able to rerun a case, see exactly which requirement failed, and extend the dataset with new cases.
 
-## How API credits would be used
+## Official form fields (each response is under 500 characters)
 
-API credits would support:
+### Role
 
-- controlled repeated execution of the evaluation matrix;
-- comparison of minimal, compact, and structured context conditions;
-- testing context retention and instruction persistence;
-- testing tool, shell, and environment selection;
-- measuring unsupported completion claims and recovery behavior;
-- structured model grading alongside deterministic validators;
-- malformed-output reruns and limited adjudication;
-- public baseline and regression reports;
-- Codex CLI use for test generation, schema maintenance, contribution review, and validator improvements.
+Primary maintainer
 
-The pilot matrix currently proposes:
+### Interest
 
-```text
-5 cases × 3 context conditions × 3 repetitions × 2 model configurations = 90 primary runs
-```
+API credits for my project
 
-The full milestone will expand to at least twenty cases. Token usage and estimated cost will be recorded for every run so the final credits request can be justified from measured pilot costs instead of requesting the maximum amount by default.
+### Why does this repository qualify? — 486 characters
+
+zh-tw-agent-reliability is a small, actively maintained open-source toolkit for reproducible evaluation of long-horizon AI-agent reliability in Traditional Chinese. It targets underrepresented multi-tool workflows—Windows/PowerShell, code repositories, browser verification, and human approval boundaries—using de-identified cases, transparent validators, and privacy-first contribution rules. The planned public v0.1 is a foundation, not a claim of broad adoption or benchmark results.
+
+### How will you use API credits for your project? — 424 characters
+
+API credits will fund reproducible pilot execution across five de-identified cases and minimal, compact, and structured context conditions; each approved run will record configuration, prompt hash, validator evidence, token usage, and estimated cost. Credits will also support regression maintenance as new cases and validators are contributed. No credits will be used for secrets, private logs, or unreviewed public claims.
+
+### Anything else we should know? — 429 characters
+
+I am the primary maintainer and will keep the project small, inspectable, and privacy-first. The repository has a deterministic local runner and no-API smoke path, but no paid model runs, 90-run matrix, token/cost measurements, or adoption claims yet. Results will be reported only after reproducible execution and evidence-based review. The immediate goal is a careful public pilot and a durable regression-maintenance workflow.
 
 ## Planned public outputs
 
@@ -80,20 +80,22 @@ Cases are rewritten as minimal synthetic reproductions of observed failure patte
 ## Current status
 
 - formal repository name and root structure established;
-- repository remains private pending publication review;
+- repository intentionally remains private until the maintainer performs the final visibility action;
 - schema drafted;
 - taxonomy drafted;
 - five pilot cases drafted;
 - local executable pilot foundation implemented; no paid API execution performed;
 - measured pilot execution pending;
-- license selection pending;
+- Apache-2.0 license selected and committed;
+- privacy and publication review completed; no raw responses, secrets, private hostnames/IPs, private conversations, or actual local-only paths remain;
 - application not yet submitted.
 
-## Fields to complete before submission
+## Account-held fields and final submission prerequisites
 
-- selected open-source license;
-- public visibility and release review;
-- pilot result link;
-- measured token and cost estimate;
-- contributor list, if any;
-- exact amount of API credits requested.
+- First name, last name, and the email associated with the ChatGPT account;
+- OpenAI Organization ID (required by the form; not retrieved or stored by this repository);
+- GitHub profile visibility set to public, if it is not already public;
+- repository visibility changed to public;
+- acceptance of the Codex for Open Source Program Terms and final Submit action.
+
+No pilot result link, measured token/cost estimate, contributor list, or exact credit amount is asserted because none is required to be invented for this v0.1 application and no paid run has occurred.
